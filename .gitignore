@@ -1,65 +1,34 @@
-# ---------------------------------------------------------
-# NordicReliquary Git Ignore — SAFE FOR PUBLIC REPO
-# ---------------------------------------------------------
+# Rust build artifacts
+loot-shim/target/
 
-# ---- Build Artifacts ----
+# CMake/Qt build artifacts
 build/
-plugin_scanner/
-run.log
-
-# ---- CMake ----
+*.o
+*.obj
+*.ilk
+*.pdb
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
 Makefile
+compile_commands.json
+NordicReliquary_autogen/
 
-# ---- VSCode / Qt / Local IDE files ----
-.vscode/
-.qtcreator/
-
-# ---- Rust target (loot-shim) ----
-loot-shim/target/
-loot-shim/Cargo.lock
-
-# ---- LOOT source (vendor folder) ----
-loot/
-
-# ---- Downloads from mod manager ----
+# Mod manager runtime data
 Downloads/
-archives/
-temp/
-cache/
-
-# ---- Skyrim / Mods / VFS ----
-# DO NOT EVER COMMIT THESE
 VirtualData/
-*/VirtualData/
 mods/
 profiles/
 overwrite/
-SKSE/
-SKSE64/
-SKSEPlugins/
 
-# If your VFS uses overlayfs/fuse mountpoints:
-mnt/
-.mount/
-
-# ---- Steam game directory accidentally added ----
+# Game folders
 SteamLibrary/
 steamapps/
-*/Skyrim/
-*/SkyrimSE/
-*/Fallout*
-*/Oblivion*
-*/Morrowind*
 
-# ---- Large images ----
-graphics/ChatGPT Image*.png
-
-# ---- Logs ----
+# Logs
 *.log
 
-# ---- System files ----
-.DS_Store
-Thumbs.db
+# Qt Creator / VS Code
+.vscode/
+.qtcreator/
+.qmake.stash
