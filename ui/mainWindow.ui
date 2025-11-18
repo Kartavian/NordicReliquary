@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>NordicMod - Plugin Manager</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <item>
+     <layout class="QHBoxLayout" name="contentLayout">
+      <item>
+       <widget class="QListWidget" name="modsList">
+        <property name="styleSheet">
+         <string notr="true">QListWidget {
+    background-color: #2C2442;
+    color: #EAE0FF;
+    border: 1px solid #4B3D6D;
+}
+</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="styleSheet">
+         <string notr="true">QTabWidget::pane {
+    border: 1px solid #3A2F5C;
+    background-color: #241E36;
+}
+
+QTabBar::tab {
+    background: #3A2F5C;
+    color: #E0E0E0;
+    padding: 6px 12px;
+    border: 1px solid #4B3D6D;
+    border-radius: 4px;
+    margin: 2px;
+}
+
+QTabBar::tab:selected {
+    background: #B48EED;
+    color: #1A1428;
+    font-weight: bold;
+}
+
+QTabBar::tab:hover {
+    background: #C4A5F6;
+}
+</string>
+        </property>
+        <property name="currentIndex">
+         <number>4</number>
+        </property>
+        <widget class="QWidget" name="tabPlugins">
+         <attribute name="title">
+          <string>Plugins</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="pluginsLayout">
+          <item>
+           <widget class="QListWidget" name="pluginListWidget"/>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tabArchives">
+         <attribute name="title">
+          <string>Archives</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="tabData">
+         <attribute name="title">
+          <string>Data</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="tabSaves">
+         <attribute name="title">
+          <string>Saves</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="tabDownloads">
+         <attribute name="title">
+          <string>Downloads</string>
+         </attribute>
+         <widget class="DownloadsPanel" name="downloadsPanel">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>491</width>
+            <height>531</height>
+           </rect>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="bottomButtonsLayout">
+      <item>
+       <widget class="QPushButton" name="settingsButton">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #B48EED;
+    color: #1A1428;
+    border: 1px solid #6C4BAF;
+    border-radius: 6px;
+    padding: 4px 10px;
+}
+QPushButton:hover {
+    background-color: #C7A9F9;
+}
+QPushButton:pressed {
+    background-color: #8C6CC3;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Settings</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="changeFolderButton">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #B48EED;
+    color: #1A1428;
+    border: 1px solid #6C4BAF;
+    border-radius: 6px;
+    padding: 4px 10px;
+}
+QPushButton:hover {
+    background-color: #C7A9F9;
+}
+QPushButton:pressed {
+    background-color: #8C6CC3;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Change the Path</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="mountButton">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #B48EED;
+    color: #1A1428;
+    border: 1px solid #6C4BAF;
+    border-radius: 6px;
+    padding: 4px 10px;
+}
+QPushButton:hover {
+    background-color: #C7A9F9;
+}
+QPushButton:pressed {
+    background-color: #8C6CC3;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Mount</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="runButton">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #B48EED;
+    color: #1A1428;
+    border: 1px solid #6C4BAF;
+    border-radius: 6px;
+    padding: 4px 10px;
+}
+QPushButton:hover {
+    background-color: #C7A9F9;
+}
+QPushButton:pressed {
+    background-color: #8C6CC3;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Run</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="unmountButton">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #B48EED;
+    color: #1A1428;
+    border: 1px solid #6C4BAF;
+    border-radius: 6px;
+    padding: 4px 10px;
+}
+QPushButton:hover {
+    background-color: #C7A9F9;
+}
+QPushButton:pressed {
+    background-color: #8C6CC3;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Unmount</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DownloadsPanel</class>
+   <extends>QListView</extends>
+   <header location="global">downloadsPanel.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
